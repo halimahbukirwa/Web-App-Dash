@@ -14,13 +14,20 @@ df = pd.read_csv('kiva_el.csv')
 
 fig = px.bar(df, x='sector', y='loan_amount')
 
-app.layout = html.Div(
-    children = (
-        html.H1(children = ' Data Science Application'),
-        dcc.Graph(id='bar-plot', figure=fig)
-
-    )
+fig.update_layout(
+    plot_bgcolor='#ea4663',
+    paper_bgcolor='#ea4663',
+    font_color='#ffffff'
 )
 
-if __name__ =='__main__':
+app.layout = html.Div(style={'backgroundColor': '#ea4663'},
+                      children=(
+    html.H1(children=' Data Science Application',
+            style={'textAlign': 'center'}),
+    dcc.Graph(id='bar-plot', figure=fig)
+
+)
+)
+
+if __name__ == '__main__':
     app.run_server(debug=True)
