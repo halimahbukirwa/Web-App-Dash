@@ -12,7 +12,7 @@ external_stylesheets = [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 ]
 
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+app = Dash(__name__, external_stylesheets=external_stylesheets, title='Data Science Application')
 
 app.layout = html.Div([
     html.Div([
