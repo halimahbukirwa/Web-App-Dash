@@ -8,7 +8,11 @@ import pandas as pd
 df = pd.read_csv('kiva_el.csv')
 sectors = df['sector'].unique()
 
-app = Dash(__name__)
+external_stylesheets = [
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+]
+
+app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div([
     html.Div([
